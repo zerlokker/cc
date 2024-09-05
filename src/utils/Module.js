@@ -1,4 +1,4 @@
-const WebSocket = require('ws');
+ const WebSocket = require('ws');
 const Reader = require("./Reader");
 const Writer = require("./Writer");
 const Helper = require("./Helper");
@@ -136,7 +136,7 @@ class NELBOTS {
 		this.isReconnecting = false;
 		this.reconnectTimeout = null;
 		this.playerPos = { x: 0, y: 0 };
-		this.version = "Gota Web " + "3.6.4";
+		this.version = 'Gota Web ' + '3.6.4';
 		this.agent = this.proxyAgent,
 		this.headers = Helper.generateHeaders(new URL(server).host);
 		this.connect();
