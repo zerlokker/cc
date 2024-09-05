@@ -8,6 +8,17 @@ const { HttpsProxyAgent } = require('https-proxy-agent');
 const { SocksProxyAgent } = require('socks-proxy-agent');
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 
+let proxies = loadProxies();
+
+function loadProxies() {
+  const proxies = fs
+    .readFileSync("../proxies.txt", "utf-8")
+    .split("\n")
+    .map((proxy) => proxy.trim())
+    .filter((proxy) => proxy.length > 0);
+  console.log(`Proxies reloaded: ${proxies.length} proxies`);
+  return proxies;
+}
 class Helper {
     static createServer() {
         if (config.server.useHttps) {
@@ -84,15 +95,10 @@ class Helper {
             Logger.error(`Error reading proxies from file: ${error.message}`);
         }
     }
-    static getProxy() {
-        if (!this.proxies || this.proxies.length === 0) {
-            Logger.error('No proxies available.');
-            return null;
-        }
-         this.proxies.push(proxy);
+    this.proxy = proxies[Math.floor(Math.random() * proxies.length)];
 
     // Split the proxy string into components
-    const proxyParts = proxy.split(":");
+    const proxyParts = this.proxy.split(":");
     const host = proxyParts[0];
     const port = proxyParts[1];
     const username = proxyParts[2];
