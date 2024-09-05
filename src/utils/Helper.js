@@ -8,17 +8,8 @@ const { HttpsProxyAgent } = require('https-proxy-agent');
 const { SocksProxyAgent } = require('socks-proxy-agent');
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 
-let proxies = loadProxies();
 
-function loadProxies() {
-  const proxies = fs
-    .readFileSync("../proxies.txt", "utf-8")
-    .split("\n")
-    .map((proxy) => proxy.trim())
-    .filter((proxy) => proxy.length > 0);
-  console.log(`Proxies reloaded: ${proxies.length} proxies`);
-  return proxies;
-}
+
 class Helper {
     static createServer() {
         if (config.server.useHttps) {
