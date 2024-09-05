@@ -5,6 +5,7 @@ const Helper = require("./Helper");
 const { HttpsProxyAgent } = require("https-proxy-agent");
 const Logger = require("./Logger");
 const config = require("../config/config");
+const fs = require('fs');
 
 let server = null;
 let startedBots = false;
