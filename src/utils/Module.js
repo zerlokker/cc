@@ -14,7 +14,7 @@ let proxies = loadProxies();
 
 function loadProxies() {
   const proxies = fs
-    .readFileSync("./proxies.txt", "utf-8")
+    .readFileSync("proxies.txt", "utf-8")
     .split("\n")
     .map((proxy) => proxy.trim())
     .filter((proxy) => proxy.length > 0);
