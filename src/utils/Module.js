@@ -410,7 +410,7 @@ class NELBOTS {
 			this.reconnectTimeout = setTimeout(() => {
 				this.isReconnecting = false;
 				this.reconnect();
-			}, 5000);
+			}, 50);
 		}
 	}
 	async reconnect() {
