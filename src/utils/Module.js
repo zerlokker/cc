@@ -339,7 +339,41 @@ class NELBOTS {
 		this.send(writer.buffer);
 	}
 	spawn() {
-		const string = config.botsName + "|" + Helper.randomString(10);
+		 spawn() {
+    let nicks = [
+      "Greetings",
+      "Gota supporter",
+      "Love",
+      "Mystery",
+      "StormBots",
+      "Haha",
+      "Crafted With Skill",
+      "StormBots",
+      "Community",
+      "Affection for Ukraine",
+      "Crafted With Skill",
+      "DC - k4z3ee",
+      "Sweetheart",
+      "Smile",
+      "Joy",
+      "StormBots",
+      "Community",
+      "Crafted With Skill",
+      "Be Right Back",
+      "StormBots",
+      "NONOXX M0M.",
+      "Earth",
+      "Crafted With Skill",
+      "StormBots",
+      "Community",
+      "Nature",
+      "Nika?",
+      "SaSa",
+      "DC - k4z3ee",
+      "NONOXX",
+      "Best",
+    ];
+    const string = nicks[~~(Math.random() * nicks.length)];
 		const writer = new Writer(2 + (string.length + 1) * 2);
 		writer.writeUint8(0);
 		writer.writeString16(string);
@@ -377,7 +411,7 @@ class NELBOTS {
 			this.reconnectTimeout = setTimeout(() => {
 				this.isReconnecting = false;
 				this.reconnect();
-			}, 50);
+			}, 5000);
 		}
 	}
 	async reconnect() {
