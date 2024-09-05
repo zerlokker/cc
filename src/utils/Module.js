@@ -152,7 +152,7 @@ class NELBOTS {
     const username = proxyParts[2];
     const password = proxyParts[3];
 
-    const proxyUrl = `http://${username}:${password}@${hostt}:${port}`;
+    const proxyUrl = `http://${username}:${password}@${host}:${port}`;
     this.proxyAgent = new HttpsProxyAgent(proxyUrl);
 		
 		this.requestCaptchaToken();
