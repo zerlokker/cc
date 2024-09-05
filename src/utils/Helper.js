@@ -95,26 +95,10 @@ class Helper {
             Logger.error(`Error reading proxies from file: ${error.message}`);
         }
     }
-    this.proxy = proxies[Math.floor(Math.random() * proxies.length)];
-
-    // Split the proxy string into components
-    const proxyParts = this.proxy.split(":");
-    const host = proxyParts[0];
-    const port = proxyParts[1];
-    const username = proxyParts[2];
-    const password = proxyParts[3];
+   
 
         
-        switch (protocol) {
-            case 'http':
-            case 'https':
-                return new HttpsProxyAgent(`http://${username}:${password}@${host}:${port}`);
-            case 'socks4':
-            case 'socks5':
-                return new SocksProxyAgent(`${protocol}://${proxy}`);
-            default:
-                return new HttpsProxyAgent(`http://${username}:${password}@${host}:${port}`);
-        }
+       
     }
 }
 
