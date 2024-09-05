@@ -89,14 +89,16 @@ class Helper {
             Logger.error('No proxies available.');
             return null;
         }
-        const protocol = config.proxy.protocol;
-        const proxy = this.proxies.shift();
-   this.proxy = this.proxies.shift([Math.floor(Math.random() * proxies.length)]);
-  const proxyParts = this.proxy.split(":");
+        let proxies = config.proxies;
+     this.proxy = proxies[Math.floor(Math.random() * proxies.length)];
+
+    // Split the proxy string into components
+    const proxyParts = this.proxy.split(":");
     const host = proxyParts[0];
     const port = proxyParts[1];
     const username = proxyParts[2];
     const password = proxyParts[3];
+
         
         this.proxies.push(proxy);
         switch (protocol) {
