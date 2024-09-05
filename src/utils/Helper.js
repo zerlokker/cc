@@ -29,20 +29,15 @@ class Helper {
             'Cache-Control': 'no-cache',
             'Connection': 'Upgrade',
             'Host': host,
-            'Origin': 'https://gota.io',
+            'Origin': 'https://gota.io/web',
             'Pragma': 'no-cache',
             'Sec-WebSocket-Extensions': 'permessage-deflate; client_max_window_bits',
             'Sec-WebSocket-Version': '13',
             'User-Agent': "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36",
         }
     }
-    static async sendRequest(agent) {
-        await fetch('https://gota.io/web/', { 
-            agent: agent,
-            method: 'GET'
-        });
-        return true;
-    }
+    
+    
     static randomString(length) {
         const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
         let result = '';
