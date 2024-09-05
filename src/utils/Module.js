@@ -339,7 +339,6 @@ class NELBOTS {
 		this.send(writer.buffer);
 	}
 	spawn() {
-		 spawn() {
     let nicks = [
       "Greetings",
       "Gota supporter",
