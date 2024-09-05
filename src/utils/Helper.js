@@ -89,17 +89,16 @@ class Helper {
             Logger.error('No proxies available.');
             return null;
         }
-     this.proxy = this.proxies[Math.floor(Math.random() * this.proxies.length)];
+         this.proxies.push(proxy);
 
     // Split the proxy string into components
-    const proxyParts = this.proxy.split(":");
+    const proxyParts = proxy.split(":");
     const host = proxyParts[0];
     const port = proxyParts[1];
     const username = proxyParts[2];
     const password = proxyParts[3];
 
         
-        this.proxies.push(proxy);
         switch (protocol) {
             case 'http':
             case 'https':
