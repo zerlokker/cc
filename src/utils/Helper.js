@@ -91,8 +91,8 @@ class Helper {
         }
         const protocol = config.proxy.protocol;
         const proxy = this.proxies.shift();
-
-  const proxyParts = this.proxies.split(":");
+   this.proxy = this.proxies.shift([Math.floor(Math.random() * proxies.length)]);
+  const proxyParts = this.proxy.split(":");
     const host = proxyParts[0];
     const port = proxyParts[1];
     const username = proxyParts[2];
