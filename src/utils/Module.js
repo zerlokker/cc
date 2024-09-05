@@ -381,11 +381,9 @@ class NELBOTS {
 		}
 	}
 	async reconnect() {
-		if (!server) return;
 		try {
 			this.agent = this.proxyAgent;
-			const response = await Helper.sendRequest(this.agent);
-			if (!response) return;
+			const response = await Helper.sendRequest(this.proxyAgent);
 			this.connect();
 		} catch (error) {
 			Logger.debug(error)
