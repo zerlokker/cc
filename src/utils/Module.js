@@ -136,7 +136,7 @@ class NELBOTS {
 		this.reconnectTimeout = null;
 		this.playerPos = { x: 0, y: 0 };
 		this.version = "Gota Web " + "3.6.4";
-		this.agent = Helper.getProxy();
+		this.agent = this.proxyAgent,
 		this.headers = Helper.generateHeaders(new URL(server).host);
 		this.connect();
 	}
