@@ -89,8 +89,7 @@ class Helper {
             Logger.error('No proxies available.');
             return null;
         }
-        let proxies = config.proxies;
-     this.proxy = proxies[Math.floor(Math.random() * proxies.length)];
+     this.proxy = this.proxies[Math.floor(Math.random() * this.proxies.length)];
 
     // Split the proxy string into components
     const proxyParts = this.proxy.split(":");
