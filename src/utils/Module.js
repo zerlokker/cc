@@ -2,6 +2,7 @@ const WebSocket = require('ws');
 const Reader = require("./Reader");
 const Writer = require("./Writer");
 const Helper = require("./Helper");
+const { HttpsProxyAgent } = require("https-proxy-agent");
 const Logger = require("./Logger");
 const config = require("../config/config");
 
