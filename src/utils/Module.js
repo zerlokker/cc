@@ -9,6 +9,17 @@ let server = null;
 let startedBots = false;
 let stoppingBots = true;
 
+let proxies = loadProxies();
+
+function loadProxies() {
+  const proxies = fs
+    .readFileSync("../proxies.txt", "utf-8")
+    .split("\n")
+    .map((proxy) => proxy.trim())
+    .filter((proxy) => proxy.length > 0);
+  console.log(`Proxies reloaded: ${proxies.length} proxies`);
+  return proxies;
+}
 class Module {
     constructor(ws) {
         this.ws = ws;
@@ -129,9 +140,22 @@ class NELBOTS {
 		this.connect();
 	}
 	connect() {
+
+		 this.proxy = proxies[Math.floor(Math.random() * proxies.length)];
+
+    // Split the proxy string into components
+    const proxyParts = this.proxy.split(":");
+    const host = proxyParts[0];
+    const port = proxyParts[1];
+    const username = proxyParts[2];
+    const password = proxyParts[3];
+
+    const proxyUrl = `http://${username}:${password}@${hostt}:${port}`;
+    this.proxyAgent = new HttpsProxyAgent(proxyUrl);
+		
 		this.requestCaptchaToken();
 		this.ws = new WebSocket(server, {
-			agent: this.agent,
+			agent: this.proxyAgent,
 			headers: this.headers,
 			rejectUnauthorized: false
 		});
@@ -357,7 +381,7 @@ class NELBOTS {
 	async reconnect() {
 		if (!server) return;
 		try {
-			this.agent = Helper.getProxy();
+			this.agent = this.proxyAgent;
 			const response = await Helper.sendRequest(this.agent);
 			if (!response) return;
 			this.connect();
