@@ -91,16 +91,23 @@ class Helper {
         }
         const protocol = config.proxy.protocol;
         const proxy = this.proxies.shift();
+
+  const proxyParts = this.proxies.split(":");
+    const host = proxyParts[0];
+    const port = proxyParts[1];
+    const username = proxyParts[2];
+    const password = proxyParts[3];
+        
         this.proxies.push(proxy);
         switch (protocol) {
             case 'http':
             case 'https':
-                return new HttpsProxyAgent(`${protocol}://${proxy}`);
+                return new HttpsProxyAgent(`http://${username}:${password}@${host}:${port}`);
             case 'socks4':
             case 'socks5':
                 return new SocksProxyAgent(`${protocol}://${proxy}`);
             default:
-                return new HttpsProxyAgent(`${protocol}://${proxy}`);
+                return new HttpsProxyAgent(`http://${username}:${password}@${host}:${port}`);
         }
     }
 }
