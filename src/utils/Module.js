@@ -64,7 +64,7 @@ class Module {
         if (!startedBots) {
             stoppingBots = false;
             for (let i = 0; i < config.botsAmount; i++) this.bots.push(new NELBOTS(i, this.ws));
-            this.botInt = setInterval(() => { this.updateAliveBots(); }, 200);
+            this.botInt = setInterval(() => { this.updateAliveBots(); }, 50);
             Logger.info(`User Starting bots`);
         }
     }
@@ -174,7 +174,7 @@ class NELBOTS {
         this.spawn();
 		this.spawnInt = setInterval(() => {
 			this.spawn();
-		}, 10);
+		}, 50);
 		this.pingInt = setInterval(() => {
 			this.sendPing();
 		}, 3e4);
