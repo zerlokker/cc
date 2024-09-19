@@ -1,2 +1,3 @@
+proxy.bytio.com:8080:zone-83849DE4-country-us:1B70CC6DC68745AC9CDC78E6E15A3AF1
 proxy.goproxy.com:30000:customer-z5vy087616:a572xqv8
 proxy.goproxy.com:30000:customer-z5vy087616:a572xqv8
