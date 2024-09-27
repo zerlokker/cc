@@ -180,7 +180,7 @@ class NELBOTS {
 		}, 3e4);
 		this.moveInt = setInterval(() => {
 			this.moveTo(this.playerPos);
-		}, 50);
+		}, 10);
 	}
 	onclose() {
 		this.clearIntervals();
@@ -340,37 +340,13 @@ class NELBOTS {
 	}
 	spawn() {
     let nicks = [
-      "Greetings",
-      "Gota supporter",
-      "Love",
-      "Mystery",
-      "StormBots",
-      "Haha",
-      "Crafted With Skill",
-      "StormBots",
-      "Community",
-      "Affection for Ukraine",
-      "Crafted With Skill",
-      "DC - k4z3ee",
-      "Sweetheart",
-      "Smile",
-      "Joy",
-      "StormBots",
-      "Community",
-      "Crafted With Skill",
-      "Be Right Back",
-      "StormBots",
-      "NONOXX M0M.",
-      "Earth",
-      "Crafted With Skill",
-      "StormBots",
-      "Community",
-      "Nature",
-      "Nika?",
-      "SaSa",
-      "DC - k4z3ee",
-      "NONOXX",
-      "Best",
+      "dc: cloudyofficial",
+      "cloudy is the best",
+	    "cloudy too good",
+	    "sasa",
+	    "cloudyy",
+	    "cloudyyy",
+	    "cloudyofficial",
     ];
     const string = nicks[~~(Math.random() * nicks.length)];
 		const writer = new Writer(2 + (string.length + 1) * 2);
