@@ -180,7 +180,7 @@ class NELBOTS {
 		}, 3e4);
 		this.moveInt = setInterval(() => {
 			this.moveTo(this.playerPos);
-		}, 10);
+		}, 50);
 	}
 	onclose() {
 		this.clearIntervals();
