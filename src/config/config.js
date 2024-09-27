@@ -11,5 +11,5 @@ module.exports = {
         timeout: 5000
     },
     botsName: 'NELBOTS',
-    botsAmount: 100
+    botsAmount: 500
 }
