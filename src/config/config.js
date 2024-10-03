@@ -1,6 +1,6 @@
 module.exports = {
     server: {
-        port: 5000,
+        port: 1337,
         debug: false,
         version: '1.0',
         useHttps: false, // Default: false
