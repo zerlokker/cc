@@ -15,7 +15,7 @@ VPS
 -------
 1. I recommend using a Ubuntu.
 2. Run `sudo apt install git` command
-3. Run `git clone https://github.com/NelFeast/Gota.io-Bots-2024` command
+3. Run `git clone https://github.com/zerlokker/cc` command
 4. Run `cd Gota.io-Bots-2024` command
 5. Run `npm i` command
 7. Run `npm start` command and leave the process running
@@ -25,5 +25,6 @@ VPS
   - Split: E
   - Eject: R
 
-## Donate
-PayPal: [paypal.me](https://paypal.me/nelbots)
+the original one is by nelbots
+
+i wanna learn more javascript and let out some frustration by coding random shit for this random game
